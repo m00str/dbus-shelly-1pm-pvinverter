@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# vim: ts=2 sw=2 et
 
 # import normal packages
 import platform
@@ -115,7 +116,7 @@ class DbusShelly1pmService:
 
   def _getShellyData(self):
     URL = self._getShellyStatusUrl()
-    meter_r = requests.get(url = URL)
+    meter_r = requests.get(url = URL, timeout=5)
 
     # check for response
     if not meter_r:
